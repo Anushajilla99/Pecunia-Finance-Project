@@ -1,0 +1,44 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<div class="container">
+
+        <h3>CHECK BALANCE</h3>
+
+    <form #userForm="ngForm"  style="width: inherit; height:auto" (ngSubmit)='onSubmit(userForm.value)'>
+      <!-- <div class="form-group">
+
+          <label>AMOUNT: </label>
+
+          <input  type="number" #amountRef='ngModel' name="amount" ngModel class="form-control">
+
+          <div *ngIf='amountRef.errors && amountRef.touched' class="alert alert-danger">
+
+              <div [hidden]='!amountRef.errors.required'> Provide Balance </div>
+          </div>
+      </div> -->
+      
+        <div class="form-group">
+
+            <label>ACCOUNT NUMBER: </label>
+
+            <input required length="12" type="number" #accIdRef='ngModel' name="accountNumber" ngModel class="form-control">
+
+            <div *ngIf='accIdRef.errors && accIdRef.touched' class="alert alert-danger">
+
+                <div [hidden]='!accIdRef.errors.required'> Provide Account NUMBER</div>
+                <div *ngIf='accIdRef.errors.pattern'>Account Number should be of 12 characters</div>
+            </div>
+        </div>
+       <input [disabled]="userForm.invalid" type="submit" value="check balance" class="btn btn-success">
+    </form>
+    </div>
+        
+    <div>
+        <h2>{{message}}</h2>
+    </div>
+ 
+
+
+

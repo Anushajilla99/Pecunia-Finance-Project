@@ -1,0 +1,31 @@
+
+<h3>Log In</h3>
+<form #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)'>
+
+    <div class="form-group">
+        <label>CustomerId</label>
+        <input required type="number" #id='ngModel' name="customerId" ngModel class="form-control">
+        <div *ngIf='id.errors
+                    && id.touched' class="alert alert-danger">
+            <div [hidden]='!id.errors.required'>
+                Provide Customer Id
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <label>Password </label>
+
+        <input required minlength="4" type="password" #p='ngModel' name="customerPassword" ngModel class="form-control">
+
+        <div *ngIf='p.errors && p.touched' class="alert alert-danger">
+
+            <div [hidden]='!p.errors.required'>Enter correct password</div>
+
+        </div>
+    </div>
+
+    <input [disabled]="userForm.invalid" type="submit"  value="submit" class="btn btn-success">
+    </form>
+

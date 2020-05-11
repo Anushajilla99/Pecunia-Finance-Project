@@ -1,0 +1,197 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<div class="container">
+
+        <h3>CREATE ACCOUNT</h3>
+
+    <form #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)'>
+
+       
+
+
+        <div class="form-group">
+
+            <label>CUSTOMER NAME: </label>
+
+            <input required minlength="6" type="text" #cust_nameRef='ngModel' name="cust_name" ngModel class="form-control">
+
+            <div *ngIf='cust_nameRef.errors
+                        && cust_nameRef.touched' class="alert alert-danger">
+
+                <div [hidden]='!cust_nameRef.errors.required'>
+
+                    Provide Customer Name
+
+                </div>
+
+                <div *ngIf='cust_nameRef.errors.pattern'>Name should be minimum of 6 characters length</div>
+
+            </div>
+
+        </div>
+
+
+
+       
+        <div class="form-group">
+
+            <label>Account Balance: </label>
+
+            <input  type="number" #account_balanceRef='ngModel' name="account_balance" ngModel class="form-control">
+
+            <div *ngIf='account_balanceRef.errors && account_balanceRef.touched' class="alert alert-danger">
+
+                <div [hidden]='!account_balanceRef.errors.required'> Provide Balance </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+
+            <label>ADDRESS LINE1: </label>
+
+            <input type="text" #addressLine1Ref='ngModel' name="addressLine1" ngModel class="form-control">
+
+            <div *ngIf='addressLine1Ref.errors
+                        && addressLine1Ref.touched' class="alert alert-danger">
+
+                <div [hidden]='!addressLine1Ref.errors.required'>
+
+                    Provide AddressLine1
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label>ADDRESS LINE2: </label>
+
+            <input type="text" #addressLine2Ref='ngModel' name="addressLine2" ngModel class="form-control">
+
+            <div *ngIf='addressLine2Ref.errors
+                        && addressLine2Ref.touched' class="alert alert-danger">
+
+                <div [hidden]='!addressLine2Ref.errors.required'>
+
+                    Provide AddressLine2
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label>CITY: </label>
+
+            <input type="text"  #cityRef='ngModel' name="city" ngModel class="form-control">
+
+            <div *ngIf='cityRef.errors
+                        && cityRef.touched' class="alert alert-danger">
+
+                <div [hidden]='!cityRef.errors.required'>
+
+                    Provide city
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+
+            <label>STATE: </label>
+
+            <input type="text" #stateRef='ngModel' name="state" ngModel class="form-control">
+
+            <div *ngIf='stateRef.errors
+                        && stateRef.touched' class="alert alert-danger">
+
+                <div [hidden]='!stateRef.errors.required'>
+
+                    Provide State
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+
+            <label>COUNTRY: </label>
+
+            <input type="text" #countryRef='ngModel' name="country" ngModel class="form-control">
+
+            <div *ngIf='countryRef.errors
+                        && countryRef.touched' class="alert alert-danger">
+
+                <div [hidden]='!countryRef.errors.required'>
+
+                    Provide Country
+
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+
+            <label>ZIPCODE: </label>
+
+            <input required length="6" type="number" #zipCodeRef='ngModel' name="zipCode" ngModel class="form-control">
+
+            <div *ngIf='zipCodeRef.errors && zipCodeRef.touched' class="alert alert-danger">
+
+                <div [hidden]='!zipCodeRef.errors.required'> Provide ZipCode </div>
+
+                <div *ngIf='zipCodeRef.errors.pattern'>ZipCode should consists of 6 digits</div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <label>AADHAR: </label>
+
+            <input required length="12" type="number" #aadharRef='ngModel' name="aadhar" ngModel class="form-control">
+
+            <div *ngIf='aadharRef.errors && aadharRef.touched' class="alert alert-danger">
+
+                <div [hidden]='!aadharRef.errors.required'> Provide AADHAR Number </div>
+
+                <div *ngIf='aadharRef.errors.pattern'>AADHAR number should consists of 12 digits</div>
+
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label>CONTACT: </label>
+
+            <input required minlength="5" type="number" #contactRef='ngModel' name="contact" ngModel class="form-control">
+
+            <div *ngIf='contactRef.errors && contactRef.touched' class="alert alert-danger">
+
+                <div [hidden]='!contactRef.errors.required'> Provide Contact Number </div>
+
+                <div *ngIf='contactRef.errors.pattern'>Contact number should consists of 10 digits</div>
+
+            </div>
+        </div>
+
+        <input [disabled]="userForm.invalid" type="submit" value="Add Account" class="btn btn-primary">
+    </form>
+</div>
+    
+<div>
+    <h2>{{message}}</h2>
+</div>

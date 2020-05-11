@@ -1,0 +1,22 @@
+<div  class="container">
+    <h3>Transaction Details</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>TID</th>
+                <th>Trans-type</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let transaction of transacs">
+                <td>{{transaction.transId}}</td>
+                <td>{{transaction.type}}</td>
+                <td>{{transaction.amount}}</td>
+                <td>{{transaction.dateOfTrans}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,93 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<div class="container">
+
+        <h3>TRANSACTION</h3>
+
+    <form #userForm="ngForm"  style="width: inherit; height:auto" (ngSubmit)='onSubmit(userForm.value)'>
+      <div class="form-group">
+
+          <label>AMOUNT: </label>
+
+          <input  type="number" #amountRef='ngModel' name="amount" ngModel class="form-control">
+
+          <div *ngIf='amountRef.errors && amountRef.touched' class="alert alert-danger">
+
+              <div [hidden]='!amountRef.errors.required'> Provide Balance </div>
+          </div>
+      </div>
+      
+        <div class="form-group">
+
+            <label>ACCOUNT NUMBER: </label>
+
+            <input required length="12" type="number" #accIdRef='ngModel' name="account_id" ngModel class="form-control">
+
+            <div *ngIf='accIdRef.errors && accIdRef.touched' class="alert alert-danger">
+
+                <div [hidden]='!accIdRef.errors.required'> Provide Account NUMBER</div>
+                <div *ngIf='accIdRef.errors.pattern'>Account Number should be of 12 characters</div>
+            </div>
+        </div>
+<!-- <div class="form-group">
+    <label>Transaction Date</label>
+    <input type="Date" #transactionDateRef='ngModel'  name="issued_date" ngModel class="form-control">
+    <div *ngIf='transactionDateRef.errors && transactionDateRef.touched' class="alert alert-danger">
+
+        <div [hidden]='!transactionDateRef.errors.required'> date </div>
+</div>
+</div> -->
+<div class="form-group">
+ <label>Cheque Id</label>
+ <input type="number" #chequeIdRef='ngModel' name="cheque_id" ngModel class="form-control">
+
+ <div *ngIf='chequeIdRef.errors && chequeIdRef.touched' class="alert alert-danger">
+
+     <div [hidden]='!chequeIdRef.errors.required'> cheque id </div>
+ </div>
+</div>
+
+<div class="form-group">
+    <label>Bank name</label>
+    <input type="string" #BanknameRef='ngModel' name="bank_name" ngModel class="form-control">
+   
+    <div *ngIf='BanknameRef.errors && BanknameRef.touched' class="alert alert-danger">
+   
+        
+        <div [hidden]='!BanknameRef.errors.required'> Bank name </div>
+    </div>
+   </div> 
+
+   <div class="form-group">
+    <label>IFSC</label>
+    <input type="number" #IFSCRef='ngModel' name="ifsc" ngModel class="form-control">
+   
+    <div *ngIf='IFSCRef.errors && IFSCRef.touched' class="alert alert-danger">
+   
+        
+        <div [hidden]='!IFSCRef.errors.required'> IFSC </div>
+    </div>
+   </div> 
+
+   <!-- <div class="form-group">
+    <label>amount in words</label>
+    <input type="string" #statusRef='ngModel' name="status" ngModel class="form-control">
+   
+    <div *ngIf='statusRef.errors && statusRef.touched' class="alert alert-danger">
+   
+        
+        <div [hidden]='!statusRef.errors.required'>amount in words </div>
+    </div>
+   </div>  -->
+   
+       <input [disabled]="userForm.invalid" type="submit" value="credit Using cheque" class="btn btn-success">
+    </form>
+    </div>
+
+        
+    <div>
+        <h2>{{message}}</h2>
+    </div>
+ 

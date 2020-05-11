@@ -1,0 +1,34 @@
+<div class="container col-md-6">
+    <br>
+    <h3 class="text-center"><u>Fetch Transactions Info Between Period</u></h3>
+    <br>
+    <form (ngSubmit)="summary()" #form="ngForm">
+        <div class="form-group">
+            <label><b><i>Customer id:</i></b> </label>
+            <input required type="text" placeholder="Enter ID" #accountIdRef="ngModel" pattern=[0-9]*   name="accountId" [(ngModel)]="accountId" class="form-control">
+            <div *ngIf='accountIdRef.errors && accountIdRef.touched' class="alert alert-danger">
+                <div [hidden]='!accountIdRef.errors.required'> Provide Employee Id </div>
+                <div *ngIf='accountIdRef.errors.pattern'>Account Id should be only numbers</div>
+                <!-- minlength="5"  maxlength="12" -->
+                <!-- <div *ngIf='accountIdRef.errors.minlength'>Account Id should be of 12 digits</div>
+                <div *ngIf='accountIdRef.errors.maxlength'>Account Id should be of 12 digits</div> -->
+                </div>
+    
+         </div>
+
+         <label><b><i>Start date:</i></b> </label>
+            <input required type="date" name="StartDate" [(ngModel)]="StartDate" 
+                class="form-control" >
+         <br>
+        <label><b><i>Last date:</i></b> </label>
+            <input required type="date"  name="EndDate" [(ngModel)]="EndDate"
+                class="form-control">
+
+                <br>
+            
+        <input [disabled]="form.invalid" type="submit"  value="submit" class="btn btn-success">
+    </form>
+</div>
+<br>
+<h2>{{message}}</h2>
+<div class="text-danger" *ngIf="error.isError">{{error.errorMessage}}</div>

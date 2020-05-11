@@ -1,0 +1,75 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <meta name='viewport' content='width=device-width, initial-scale=1'>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+    
+<div class="container-fluid"> 
+  <div id="b">&nbsp;
+    
+      <div style= "border-radius: 25px; background-color:lightsteelblue;
+      border: 2px solid rgba(115, 173, 33, 0.808);width: inherit; height:100px">
+     <h5 style="padding-bottom: 5px;padding-top: 5px;"> ACCOUNT <i class="fa fa-user-circle-o" style="font-size:36px"></i></h5>
+      <!-- <li  > -->
+       <div style="padding-left: 400px;">
+         <button class="btn btn-primary" routerLink="/addacc">ADD ACCOUNT</button>&nbsp;&nbsp;&nbsp;
+      
+        <button class="btn btn-primary" routerLink="/listacc">LIST ACCOUNTS</button>&nbsp;&nbsp;&nbsp;
+      
+        <button class="btn btn-primary" routerLink="/checkb">CHECK BALANCE</button>
+      </div>
+      <!-- </li>  -->
+    </div>
+    <br>
+    <div style= "border-radius: 25px;background-color:lightsteelblue;
+    border: 2px solid #73AD21;width: inherit; height:110px">
+      <h5 style="padding-bottom: 5px;padding-top: 5px;">TRANSACTION <i class="fa fa-money" style="font-size:36px"></i></h5>
+      <div style="padding-left: 250px;">
+        <button class="btn btn-primary" routerLink="/add">CREDIT USING SLIP</button>&nbsp;&nbsp;&nbsp;
+     
+        <button class="btn btn-primary" routerLink="/del">DEBIT USING SLIP</button>&nbsp;&nbsp;&nbsp;
+     
+        <button class="btn btn-primary" routerLink="/addc">CREDIT USING CHEQUE</button>&nbsp;&nbsp;&nbsp;
+      
+        <button class="btn btn-primary" routerLink="/delc">DEBIT USING CHEQUE</button>
+      </div>
+    </div>
+    <br>
+    <div style= "border-radius: 25px;background-color:lightsteelblue;
+    border: 2px solid #73AD21;width: inherit; height:110px">
+      <h5 style="padding-bottom: 5px;padding-top: 5px;">LOAN<i class="fa fa-dollar" style="font-size:36px"></i>
+      </h5>
+      <div style="padding-left: 250px;">
+        <button class="btn btn-primary" routerLink="/loanreq">LOAN REQUEST </button>&nbsp;&nbsp;&nbsp;
+      
+        <button class="btn btn-primary" routerLink="/allloans">GET ALL LOAN REQUESTS</button>&nbsp;&nbsp;&nbsp;
+      
+        <button class="btn btn-primary" routerLink="/acceptloans">GET ACCEPTED LOANS</button>&nbsp;&nbsp;&nbsp;
+      
+        <button class="btn btn-primary" routerLink="/rejectloans">GET REJECTED LOANS</button>
+      
+      </div>
+    </div>
+    <br>
+    <div style= "border-radius: 25px;background-color:lightsteelblue;
+    border: 2px solid #73AD21;width: inherit; height:100px">
+      <h5 style="padding-bottom: 5px;padding-top: 5px;">PASSBOOK <i class="fa fa-book" style="font-size:36px"></i></h5>
+      <div style="padding-left: 550px;">
+     
+        <button class="btn btn-primary" routerLink="/updatePassbook">PASSBOOK</button>
+      </div>
+    </div>
+      <!-- <li>
+        <button class="btn btn-primary" routerLink="/accountSummary">ACCOUNT SUMMARY</button>
+      </li> -->
+     
+  
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
+      
